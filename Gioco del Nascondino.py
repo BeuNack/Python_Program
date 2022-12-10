@@ -84,9 +84,3 @@ print("numColonna: " + str(numCol))
 
 indovinato = indovinaIndice(numRiga, numCol, indovinato)
 print("Complimenti, hai indovinato entrambi gli indici")
-    
-
-
-    
-            
-

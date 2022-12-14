@@ -29,7 +29,7 @@ pen.write("Player A: 0  Player B: 0", align="center", font =("Courier", 24, "nor
 paddleA = turtle.Turtle()
 paddleA.speed(0) #Speed of animation
 paddleA.shape("square")
-paddleA.color("white")
+paddleA.color("yellow")
 paddleA.shapesize(stretch_wid=5, stretch_len=1)
 paddleA.penup()
 paddleA.goto(-350,0)
@@ -39,7 +39,7 @@ paddleA.goto(-350,0)
 paddleB = turtle.Turtle()
 paddleB.speed(0) #Speed of animation
 paddleB.shape("square")
-paddleB.color("white")
+paddleB.color("red")
 paddleB.shapesize(stretch_wid=5, stretch_len=1)
 paddleB.penup()
 paddleB.goto(350,0)
@@ -51,8 +51,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0,0)
-ball.dx = 0.08
-ball.dy = 0.08
+ball.dx = 0.199
+ball.dy = 0.199
 
 # Function
 
@@ -132,8 +132,16 @@ while True:
         ball.setx(-340)
         ball.dx *=-1
 
+    # Reset paddle
     
+    if paddleA.ycor() > 360:
+        paddleA.sety(0)
 
-    
+    if paddleA.ycor() < -360:
+        paddleB.sety(0)
 
-    
+    if paddleB.ycor() > 360:
+        paddleB.sety(0)
+
+    if paddleB.ycor() < -30:
+        paddleB.sety(0)
